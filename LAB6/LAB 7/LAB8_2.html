@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Character Recognition with Regex</title>
+    <style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f0f0f0;
+			padding: 20px;
+		}
+		form {
+			margin-bottom: 20px;
+		}
+		label {
+			display: block;
+			margin-bottom: 10px;
+		}
+		input[type=text] {
+			padding: 5px;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			font-size: 16px;
+			width: 300px;
+			box-sizing: border-box;
+		}
+		button {
+			background-color: #4c4caf;
+			color: white;
+			border: none;
+			border-radius: 3px;
+			padding: 10px;
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: #5d2fa7;
+		}
+		#output {
+			font-weight: bold;
+			color: #654caf;
+		}
+        </style>
+	<script>
+		function performRecognition() {
+			const string = document.getElementById("string").value;
+			const regex = /[^h]/g;
+			const matches = string.match(regex);
+			document.getElementById("output").innerHTML = matches.join(", ");
+		}
+	</script>
+</head>
+<body>
+	<label for="string">Enter a string:</label>
+	<input type="text" id="string" name="string">
+	<button onclick="performRecognition()">Recognize Uppercase Letters</button>
+	<p>Uppercase letters found: <span id="output"></span></p>
+</body>
+</html>

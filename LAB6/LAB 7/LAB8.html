@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Input Validation</title>
+    <script>
+        function validateInput() {
+            var input = document.getElementById("input").value;
+            var regex = /^[1-4][A-Z]{2}\d{2}[A-Z]{2}\d{3}$/;
+            if (!regex.test(input)) {
+                alert("Invalid input format. Please enter a digit from 1 to 4 followed by two upper-case characters followed by two digits followed by two upper-case characters followed by three digits; no embedded spaces allowed.");
+                return false;
+            }
+            else {
+                alert("INPUT VALID");
+            } return true;
+        }
+    </script>
+</head>
+
+<body>
+    <form onsubmit="return validateInput();">
+        <label for="input">Enter user input:</label>
+        <input type="text" id="input" name="input" required>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

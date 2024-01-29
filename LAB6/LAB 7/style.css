@@ -1,0 +1,128 @@
+/* Animal History banner section */
+.banner {
+    background-color: #333;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight:bold;
+
+    border: #333;
+
+}
+
+/* Image Slider section */
+.image-slider {
+    padding: 20px 0;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.slider img {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.controls {
+    margin-top: 10px;
+}
+
+/* Animal description section */
+.animal-description {
+    padding: 20px 0;
+}
+
+.animal-description img {
+    max-width: 100%;
+    height: auto;
+}
+
+.controls {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.play,
+.pause {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.5s ease-in-out;
+}
+
+.play:hover,
+.pause:hover {
+    color: #3b309b;
+}
+
+.pause {
+    margin-left: 10px;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+
+}
+
+@media screen and (max-width: 400px) {
+
+    .banner {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .animal-description {
+        padding: 20px;
+    }
+
+    .animal-description img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .controls {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .play,
+    .pause {
+        background-color: transparent;
+        border: none;
+        font-size: 24px;
+        color: #333;
+        cursor: pointer;
+        transition: color 0.2s ease-in-out;
+    }
+
+    .play:hover,
+    .pause:hover {
+        color: #666;
+    }
+
+    .pause {
+        margin-left: 10px;
+    }
+
+}

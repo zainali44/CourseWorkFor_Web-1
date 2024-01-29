@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ASK A QUESTION </title>
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 50px auto;
+            max-width: 400px;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        button {
+            background-color: #4c54af;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #3e478e;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <form>
+        <label for="name">What is the Capital of Pakistan?</label>
+        <input type="text" id="name" name="name" placeholder="Enter your Answer">
+
+        <p id="sum"></p>
+
+        <script>
+            let total = 0;
+            const sumElement = document.getElementById("sum");
+
+            function addToTotal() {
+                const Input_Name = document.getElementById("name");
+                if (Input_Name.value == "Islamabad") {
+                    sumElement.style.color = "green";
+                    sumElement.innerHTML = "CONGRATULATIONS! You are Correct";
+                    Input_Name.value = "";
+                    
+                } else {
+                console.log(Input_Name.value);
+                    sumElement.style.color = "red";
+                    sumElement.innerHTML = "Incorrect! Try Again";
+                    Input_Name.value = "";
+                }
+            }
+        </script>
+
+        <button type="button" onclick="addToTotal()">Submit Answer</button>
+    </form>
+</body>
+
+</html>

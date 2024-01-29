@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Number of Time</title>
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 50px auto;
+            max-width: 400px;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        button {
+            background-color: #d145ae;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #8e3e81;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter the Message">
+
+        <label for="number">Number:</label>
+        <input type="text" id="number" name="number" placeholder="Enter the Number of times ">
+
+        <p id="sum"></p>
+
+        <script>
+            let total = 0;
+            const sumElement = document.getElementById("sum");
+
+            function addToTotal() {
+                const numberInput = document.getElementById("number");
+                const NameInput = document.getElementById("name");
+                const number = parseInt(numberInput.value);
+                for (let i = 0; i < number; i++) {
+                    console.log(NameInput.value);
+                    sumElement.innerHTML+=NameInput.value+"<br>";
+                    numberInput.value = "";
+                }
+            }
+        </script>
+
+        <button type="button" onclick="addToTotal()">Sumbit</button>
+    </form>
+</body>
+
+</html>

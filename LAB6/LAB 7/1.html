@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animal Favorites</title>
+	<!-- Add link to favorite icon -->
+	<link rel="icon" href="312069-P8VTDM-219.png" type="image/x-icon"/>
+	<!-- Add CSS styles -->
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		
+		h1 {
+			text-align: center;
+			margin-top: 20px;
+			color: #333;
+		}
+		
+		.container {
+			max-width: 600px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+		
+		.animals {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+		
+		.animals li {
+			display: flex;
+			align-items: center;
+			padding: 10px;
+			border-bottom: 1px solid #eee;
+		}
+		
+		.animals li img {
+			margin-right: 10px;
+		}
+		
+		.favorites {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+		
+		.favorites li {
+			display: flex;
+			align-items: center;
+			padding: 10px;
+			border-bottom: 1px solid #eee;
+		}
+		
+		.favorites li img {
+			margin-right: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Animal Favorites</h1>
+		
+		<!-- Add favorite icon -->
+		<div>
+			<a href="favorites.html">
+				<img src="312069-P8VTDM-219.png" alt="Favorite icon" width="32" height="32">
+			</a>
+		</div>
+		
+		<!-- Add list of animals -->
+		<ul class="animals">
+			<li>
+				<img src="img1.jpg" alt="Lion" width="50" height="50">
+				<span>Lion</span>
+				<button>Add to favorites</button>
+			</li>
+			<li>
+				<img src="elephant.jpg" alt="Elephant" width="50" height="50">
+				<span>Elephant</span>
+				<button>Add to favorites</button>
+			</li>
+			<li>
+				<img src="giraffe.jpg" alt="Giraffe" width="50" height="50">
+				<span>Giraffe</span>
+				<button>Add to favorites</button>
+			</li>
+		</ul>
+	</div>
+	
+	<!-- Add JavaScript code -->
+	<script>
+		// Get buttons
+		var buttons = document.getElementsByTagName('button');
+		
+		// Add event listeners to buttons
+		for (var i = 0; i < buttons.length; i++) {
+			buttons[i].addEventListener('click', function() {
+				// Get animal name and create list item
+				var animalName = this.parentNode.getElementsByTagName('span')[0].textContent;
+				var li = document.createElement('li');
+				var img = document.createElement('img');
+				var span = document.createElement('span');
+				
+				// Set attributes for list item
+				li.setAttribute('class', 'favorites-item');
+				img.setAttribute('src', this.parentNode.getElementsByTagName('img')[0].getAttribute('src'));
+				img.setAttribute('alt', animalName);
+				img.setAttribute('width', '50');
+        img.setAttribute('height', '50');
+        span.textContent = animalName;
+
+        // Add list item to favorites list
+        li.appendChild(img);
+        li.appendChild(span);
+        document.getElementsByClassName('favorites')[0].appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>
